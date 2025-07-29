@@ -13,28 +13,25 @@ const FeatureIcon: React.FC<{ children: React.ReactNode }> = ({ children }) => (
 // Main HeroSection Component
 const App: React.FC<HeroSectionProps> = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false); // State for search bar visibility
-  const searchInputRef = useRef<HTMLInputElement>(null); // Ref for search input focus
+  const [isSearchOpen, setIsSearchOpen] = useState(false); 
+  const searchInputRef = useRef<HTMLInputElement>(null); 
 
   // Close mobile menu or search bar if screen size changes
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768) { // md breakpoint
+      if (window.innerWidth >= 768) { 
         setIsMenuOpen(false);
-        // If search is open on desktop, focus the input when it appears
         if (isSearchOpen && searchInputRef.current) {
           searchInputRef.current.focus();
         }
-      } else { // Mobile breakpoint
-        // Close desktop-style search if resizing to mobile
+      } else { 
         setIsSearchOpen(false);
       }
     };
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, [isSearchOpen]); // Re-run effect when search state changes to handle focus
+  }, [isSearchOpen]); 
 
-  // Effect to focus search input when it opens
   useEffect(() => {
     if (isSearchOpen && window.innerWidth >= 768 && searchInputRef.current) {
       searchInputRef.current.focus();
@@ -151,7 +148,7 @@ const App: React.FC<HeroSectionProps> = () => {
       </header>
 
       {/* Hero Content */}
-      <main className="relative overflow-hidden pt-20 md:pt-10">
+      <main className="relative overflow-hidden pb-80 md:pb-0 pt-20 md:pt-10">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
