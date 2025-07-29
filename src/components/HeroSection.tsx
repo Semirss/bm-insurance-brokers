@@ -151,7 +151,7 @@ const App: React.FC<HeroSectionProps> = () => {
       </header>
 
       {/* Hero Content */}
-      <main className="relative overflow-hidden pt-20 md:pt-10">
+      <main className="relative overflow-hidden pt-20 md:pt-30">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -168,14 +168,14 @@ const App: React.FC<HeroSectionProps> = () => {
             <div className="text-center md:text-left animate-fade-in-right">
               {/* Logo */}
               <div className="mb-4 flex justify-center md:justify-start items-center">
-                <img src="/logo2.png" alt="Company Logo" className="h-16 mr-3 shadow-2xl transform hover:scale-110 transition-transform duration-300" />
+                <img src="/logo2.png" alt="Company Logo" className="h-30 mr-5  transform hover:scale-110 transition-transform duration-300" />
               </div>
 
               <span className="bg-blue-100 text-blue-600 font-semibold py-1 px-3 rounded-full text-xs uppercase">No-Obligation start now</span>
-              <h1 className="text-2xl md:text-4xl lg:text-4xl font-extrabold leading-tight my-3 drop-shadow-lg">
+              <h1 className="text-2xl md:text-5xl lg:text-5xl font-extrabold leading-tight my-3 drop-shadow-lg">
                 Your Trusted Partner in <span className="text-blue-300">Insurance Solutions</span>
               </h1>
-              <p className="text-sm text-gray-200 max-w-xl mx-auto md:mx-0 mb-6 drop-shadow-md">
+              <p className="text-base text-gray-200 max-w-xl mx-auto md:mx-0 mb-6 drop-shadow-md">
                 We provide peace of mind with tailored insurance solutions. Our expert team is dedicated to protecting what matters most to you and your business.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-3">
@@ -188,7 +188,7 @@ const App: React.FC<HeroSectionProps> = () => {
             
             {/* Right Column: Image with Animated Clip Path */}
             <div className="hidden md:flex justify-center items-center animate-fade-in-left">
-              <div className="relative w-[400px] h-[400px]">
+              <div className="relative w-[600px] h-[600px]">
                 <div className="absolute inset-0 bg-blue-200 animated-clip-path"></div>
                 <img 
                   src="/bg1.jpg" 

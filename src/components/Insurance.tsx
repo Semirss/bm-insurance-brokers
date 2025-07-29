@@ -14,7 +14,7 @@ interface ServiceCardProps {
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ solution, index }) => {
   // Set isOpen to true if index is less than 3 (for the first three boxes)
-  const [isOpen, setIsOpen] = useState(index < 3 || solution.isPrimary || false);
+  const [isOpen, setIsOpen] = useState(index < 2 || solution.isPrimary || false);
 
   const toggleOpen = () => {
     setIsOpen(!isOpen);
@@ -24,7 +24,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ solution, index }) => {
     <div
       className={`relative rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1
         ${solution.isPrimary ? 'bg-blue-700 text-white primary-card-glow' : 'bg-white border border-gray-100'}
-        animate-fade-in-up flex flex-col`} // Adjusted shadow, hover transform, rounded-lg
+        animate-fade-in-up flex flex-col col-span-2 md:col-span-2`} 
       style={{ animationDelay: `${0.1 + index * 0.05}s` }} // Reduced staggered animation delay
     >
       <div className={`relative z-10 flex flex-col h-full`}> {/* Inner content wrapper, relative z-index */}
