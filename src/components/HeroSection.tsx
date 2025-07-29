@@ -203,7 +203,7 @@ const App: React.FC<HeroSectionProps> = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16 max-w-3xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
-              Why choose, <span className="text-blue-600">us</span>
+              Why choose <span className="text-blue-600">us</span>
             </h2>
             <p className="text-lg text-gray-700 mt-4">
                 At BM Insurance Brokers, we understand that every aspect of your life and business is worth protecting. With a team of highly experienced and dedicated insurance professionals, we offer tailored insurance solutions that meet your unique needs. Whether it's personal or business insurance, our expertise ensures that you get the best coverage at the best price, providing you with peace of mind and financial security. Trust us to be your reliable partner in navigating the complex world of insurance.            </p>
