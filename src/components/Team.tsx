@@ -12,9 +12,9 @@ const TeamMemberCard: React.FC<TeamMemberProps> = ({ name, title, description, i
   const isLeft = alignment === 'left';
   return (
     <div className={`flex flex-col items-center text-center md:flex-row ${isLeft ? 'md:text-left' : 'md:flex-row-reverse md:text-right'} mb-16 md:mb-24`}>
-      <div className={`relative w-60 h-60 md:w-72 md:h-72 flex-shrink-0 overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300 rounded-xl
+      <div className={`relative w-50 h-70 md:w-52 md:h-62 flex-shrink-0 overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300 rounded-xl
         ${isLeft ? 'md:mr-12' : 'md:ml-12'}`}> {/* Removed slanted-container, added rounded-xl */}
-        <img src={imageUrl} alt={name} className="w-full h-full object-cover" /> {/* Removed counter-slanted-image */}
+        <img src={imageUrl} alt={name} className="w-full h-full object-center" /> {/* Removed counter-slanted-image */}
       </div>
       <div className={`mt-6 md:mt-0 ${isLeft ? 'md:pr-8' : 'md:pl-8'}`}>
         <h3 className="text-3xl font-bold text-gray-900 mb-2">{name}</h3>
@@ -38,14 +38,14 @@ const Team: React.FC = () => {
       name: "Mebratu Gowomsa",
       title: "Deputy General Manager (Operations)",
       description: "His decade-long tenure in claims management and import-export operations ensures our clients receive exceptional support and service.",
-      imageUrl: "https://placehold.co/250x250/E0E7FF/4F46E5?text=Mebratu+Gowomsa", // Placeholder image
+      imageUrl: "/pp2.jpg", // Placeholder image
       alignment: "right" as const,
     },
     {
       name: "Bizuhan Abebe",
       title: "Deputy General Manager (Marketing)",
       description: "With over 19 years in insurance, Bizuhan's customer-centric approach and MBA background drive our company's growth and client satisfaction.",
-      imageUrl: "https://placehold.co/250x250/E0E7FF/4F46E5?text=Bizuhan+Abebe", // Placeholder image
+      imageUrl: "/pp3.jpg", 
       alignment: "left" as const,
     },
   ];
@@ -68,9 +68,7 @@ const Team: React.FC = () => {
           ))}
         </div>
       </div>
-      <style>{`
-        /* Removed .slanted-container and .counter-slanted-image as they are no longer needed */
-      `}</style>
+      
     </section>
   );
 };

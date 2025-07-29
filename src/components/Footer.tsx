@@ -9,11 +9,9 @@ const Footer: React.FC = () => {
           {/* Placeholder for the BM BROKERS logo */}
           <div className="mb-3"> {/* Reduced margin-bottom */}
             {/* Using an SVG for a scalable, clean logo representation */}
-            <svg width="120" height="80" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg"> {/* Reduced SVG size */}
-              <path d="M100 0L0 100H200L100 0Z" fill="#3B82F6"/> {/* Blue triangle */}
-              <text x="100" y="70" textAnchor="middle" fill="white" fontSize="24" fontWeight="bold" fontFamily="Inter, sans-serif">BM</text>
-              <text x="100" y="90" textAnchor="middle" fill="white" fontSize="12" fontFamily="Inter, sans-serif">BROKERS</text>
-            </svg>
+            <img src="/logo2.png"
+            className='w-40 h-30 md:w-52 md:h-32 object-contain' alt="BM BROKERS Logo" />
+           
           </div>
           <p className="text-base font-semibold mb-1">Bizuhan & Mebratu Insurance</p> {/* Reduced text size */}
           <p className="text-sm text-gray-400">Brokers G/Partnership</p> {/* Reduced text size */}

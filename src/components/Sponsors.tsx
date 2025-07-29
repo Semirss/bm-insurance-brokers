@@ -9,43 +9,43 @@ interface Sponsor {
 const SPONSORS_DATA: Sponsor[] = [
   {
     name: "Africa Insurance Company S.C.",
-    logoUrl: "https://placehold.co/150x150/F87171/FFFFFF?text=Africa", // Placeholder for Africa Insurance logo
+    logoUrl: "/sp1.png", 
   },
   {
     name: "Abay Insurance S.C.",
-    logoUrl: "https://placehold.co/150x150/60A5FA/FFFFFF?text=Abay", // Placeholder for Abay Insurance logo
+    logoUrl: "/sp2.png", 
   },
   {
     name: "Nile Insurance Company S.C",
-    logoUrl: "https://placehold.co/150x150/34D399/FFFFFF?text=Nile", // Placeholder for Nile Insurance logo
+    logoUrl: "/sp3.png", 
   },
   {
     name: "Global Insurance Co.(S.C)",
-    logoUrl: "https://placehold.co/150x150/A78BFA/FFFFFF?text=Global", // Placeholder for Global Insurance logo
+    logoUrl: "/sp4.png", 
   },
   {
     name: "United Insurance S.C.",
-    logoUrl: "https://placehold.co/150x150/FCA5A5/FFFFFF?text=United", // Example additional sponsor
+    logoUrl: "/sp5.jpg", 
   },
   {
     name: "Awash Insurance S.C.",
-    logoUrl: "https://placehold.co/150x150/FDBA74/FFFFFF?text=Awash", // Example additional sponsor
+    logoUrl: "/sp6.jpg", 
   },
   {
     name: "Ethio Life and General Insurance S.C.",
-    logoUrl: "https://placehold.co/150x150/86EFAC/FFFFFF?text=Ethio", // Example additional sponsor
+    logoUrl: "/sp7.png", 
   },
   {
     name: "Lion Insurance Company S.C.",
-    logoUrl: "https://placehold.co/150x150/A5F3FC/FFFFFF?text=Lion", // Example additional sponsor
+    logoUrl: "/sp8.jpg", 
   },
   {
     name: "Nib Insurance Company S.C.",
-    logoUrl: "https://placehold.co/150x150/FFD700/FFFFFF?text=Nib", // Example additional sponsor
+    logoUrl: "/sp9.jpg", 
   },
   {
     name: "Oromia Insurance Company S.C.",
-    logoUrl: "https://placehold.co/150x150/FF6347/FFFFFF?text=Oromia", // Example additional sponsor
+    logoUrl: "/sp10.png", 
   },
 ];
 
@@ -58,7 +58,7 @@ const SponsorLogo: React.FC<Sponsor> = ({ name, logoUrl }) => {
       <img
         src={logoUrl}
         alt={name}
-        className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110" // Removed clip-path, added hover scale
+        className="max-w-full rounded-full  max-h-full object-contain hover:grayscale-0 transition-all duration-300 transform hover:scale-110" // Removed clip-path, added hover scale
       />
     </div>
   );
@@ -138,8 +138,7 @@ const Sponsors: React.FC = () => {
           Our Valued <span className="block md:inline">Partnerships</span>
         </h2>
         <p className="text-lg text-gray-700 mt-4 max-w-3xl mx-auto mb-16 animate-fade-in-up">
-          At BM Insurance Company S.C, we proudly collaborate with industry leaders to deliver unparalleled insurance solutions. Our strong alliances are built on trust and a shared commitment to excellence, ensuring comprehensive protection for our clients across Ethiopia.
-        </p>
+At BM Insurance Company S.C., we proudly partner with leading insurers to provide comprehensive and reliable services. Our collaborations ensure top-quality insurance solutions for our clients in Ethiopia. We value these partnerships and are committed to continuing our efforts to serve our community effectively.        </p>
 
         {/* Infinite Scrolling Sponsors Container */}
         <div
