@@ -22,32 +22,30 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ solution, index }) => {
 
   return (
     <div
-      className={`relative rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2
+      className={`relative rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1
         ${solution.isPrimary ? 'bg-blue-700 text-white primary-card-glow' : 'bg-white border border-gray-100'}
-        animate-fade-in-up flex flex-col`}
+        animate-fade-in-up flex flex-col`} // Adjusted shadow, hover transform, rounded-lg
       style={{ animationDelay: `${0.1 + index * 0.05}s` }} // Reduced staggered animation delay
     >
-      {/* Removed pseudo-element for the glowing border effect */}
-
       <div className={`relative z-10 flex flex-col h-full`}> {/* Inner content wrapper, relative z-index */}
-        <div className={`flex items-center p-5 md:p-6 ${solution.isPrimary ? 'bg-blue-700' : 'bg-white'} rounded-t-xl`}> {/* Increased padding, rounded-t-xl */}
+        <div className={`flex items-center p-3 md:p-4 ${solution.isPrimary ? 'bg-blue-700' : 'bg-white'} rounded-t-lg`}> {/* Reduced padding, rounded-t-lg */}
           {/* Dropdowner Circle */}
           <button
             onClick={toggleOpen}
-            className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center mr-4 transition-colors duration-300
-              ${solution.isPrimary ? 'bg-blue-900 hover:bg-blue-800 text-white' : 'bg-blue-100 hover:bg-blue-200 text-blue-600'}`} // Slightly larger, more pronounced button
+            className={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center mr-3 transition-colors duration-300
+              ${solution.isPrimary ? 'bg-blue-900 hover:bg-blue-800 text-white' : 'bg-blue-100 hover:bg-blue-200 text-blue-600'}`} // Reduced size, mr
             aria-expanded={isOpen}
             aria-label={isOpen ? "Collapse details" : "Expand details"}
           >
-            <svg className={`w-5 h-5 transform transition-transform duration-300 ${isOpen ? 'rotate-45' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg> {/* Adjusted icon size */}
+            <svg className={`w-4 h-4 transform transition-transform duration-300 ${isOpen ? 'rotate-45' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg> {/* Reduced icon size */}
           </button>
 
           {/* Icon and Title */}
           <div className="flex items-center flex-grow">
-            <div className={`mr-4 ${solution.isPrimary ? 'text-blue-200' : 'text-blue-600'} w-9 h-9`}> {/* Slightly larger icon container */}
+            <div className={`mr-3 ${solution.isPrimary ? 'text-blue-200' : 'text-blue-600'} w-8 h-8`}> {/* Reduced mr, fixed icon container size */}
               {solution.icon}
             </div>
-            <h3 className={`font-bold text-xl md:text-2xl ${solution.isPrimary ? 'text-white' : 'text-gray-900'}`}> {/* Adjusted text size */}
+            <h3 className={`font-bold text-lg md:text-xl ${solution.isPrimary ? 'text-white' : 'text-gray-900'}`}> {/* Reduced text size */}
               {solution.title}
             </h3>
           </div>
@@ -55,10 +53,10 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ solution, index }) => {
 
         {/* Description Content - Collapsible */}
         <div
-          className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-60 opacity-100 py-4' : 'max-h-0 opacity-0 py-0'}`} // Increased py
+          className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-40 opacity-100 py-3' : 'max-h-0 opacity-0 py-0'}`} // Reduced max-height, py
           style={{ transitionProperty: 'max-height, opacity, padding-top, padding-bottom' }}
         >
-          <p className={`px-6 md:px-8 text-base ${solution.isPrimary ? 'text-blue-100' : 'text-gray-700'}`}> {/* Adjusted px, text size */}
+          <p className={`px-5 md:px-6 text-sm ${solution.isPrimary ? 'text-blue-100' : 'text-gray-700'}`}> {/* Reduced px, text size */}
             {solution.description}
           </p>
         </div>
@@ -114,16 +112,16 @@ const Insurance: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 bg-white text-gray-800 overflow-hidden">
-      <div className="container mx-auto px-4 text-center">
-        <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-3 animate-fade-in-down text-gray-900">
+    <section className="py-12 bg-white text-gray-800 overflow-hidden"> {/* Reduced py */}
+      <div className="container mx-auto px-3 text-center"> {/* Reduced px */}
+        <h2 className="text-3xl md:text-4xl font-extrabold leading-tight mb-2 animate-fade-in-down text-gray-900"> {/* Reduced text size and mb */}
           8-in-1 <span className="text-blue-600">Insurance Solutions</span>
         </h2>
-        <p className="text-base text-gray-700 mt-2 max-w-3xl mx-auto mb-12 animate-fade-in-up">
+        <p className="text-sm text-gray-700 mt-1 max-w-2xl mx-auto mb-8 animate-fade-in-up"> {/* Reduced text size, mt, mb, max-w */}
           Discover our 8-in-1 Insurance Solutions, a comprehensive suite of services meticulously designed to cater to every aspect of your insurance needs. From personalized risk assessments to seamless claims assistance, our expert team ensures that you receive tailored solutions that provide maximum coverage and peace of mind. With our holistic approach, managing your insurance has never been easier or more efficient.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"> {/* Reduced gap */}
           {solutions.map((solution, index) => (
             <ServiceCard key={index} solution={solution} index={index} />
           ))}

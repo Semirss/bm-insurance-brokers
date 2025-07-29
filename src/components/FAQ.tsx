@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 // Define the type for a single FAQ item
 interface FaqItem {
@@ -44,6 +44,8 @@ const faqData: FaqItem[] = [
 const FAQ: React.FC = () => {
   // Initialize with the IDs of the first two items and the emphasized item ('3')
   const [openItemIds, setOpenItemIds] = useState<Set<string>>(() => new Set(['1', '2', '3']));
+  const emphasizedItemRef = useRef<HTMLDivElement>(null);
+  const [arrowPosition, setArrowPosition] = useState({ top: 0, left: 0, visible: false });
 
   const toggleItem = (id: string) => {
     setOpenItemIds(prevIds => {
@@ -57,12 +59,43 @@ const FAQ: React.FC = () => {
     });
   };
 
+  // Effect to position the arrow next to the emphasized item
+  useEffect(() => {
+    if (emphasizedItemRef.current) {
+      const itemRect = emphasizedItemRef.current.getBoundingClientRect();
+      const containerElement = document.querySelector('.faq-container'); // Get the main container for relative positioning
+      
+      if (containerElement) {
+        const containerRect = containerElement.getBoundingClientRect();
+        setArrowPosition({
+          top: itemRect.top - containerRect.top + itemRect.height / 2, // Vertically center with the item
+          left: itemRect.left - containerRect.left - 40, // Position to the left of the item, adjust as needed
+          visible: true,
+        });
+      }
+    } else {
+      setArrowPosition({ top: 0, left: 0, visible: false }); // Hide arrow if item is not found
+    }
+  }, [openItemIds]); // Recalculate if items open/close, potentially shifting layout
+
   return (
     <div className="min-h-screen bg-white flex flex-col items-center p-4 font-sans">
-      <div className="container mx-auto max-w-2xl py-8">
+      <div className="container mx-auto max-w-2xl py-8 relative faq-container"> {/* Added 'faq-container' class and 'relative' */}
         <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-8 text-center">
           Frequently Asked Questions
         </h2>
+
+        {/* Animated Arrow */}
+        {arrowPosition.visible && (
+          <div
+            className="absolute z-20 arrow-bounce"
+            style={{ top: arrowPosition.top, left: arrowPosition.left }}
+          >
+            <svg className="w-10 h-10 text-red-500" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" />
+            </svg>
+          </div>
+        )}
 
         <div className="space-y-4">
           {faqData.map((item) => {
@@ -72,6 +105,7 @@ const FAQ: React.FC = () => {
             return (
               <div
                 key={item.id}
+                ref={isEmphasized ? emphasizedItemRef : null} // Assign ref only to emphasized item
                 className={`rounded-lg shadow-md overflow-hidden transition-all duration-300
                   ${isEmphasized ? 'bg-blue-600 shadow-xl pulse-effect' : 'bg-blue-900'}
                 `}
@@ -103,7 +137,7 @@ const FAQ: React.FC = () => {
                 {isOpen && (
                   <div className={`px-4 pt-1 pb-4 text-sm leading-relaxed animate-fade-in
                     ${isEmphasized ? 'bg-white text-gray-800 border-t border-gray-200' : 'bg-white text-gray-800 border-t border-gray-200'}
-                  `}> {/* Changed background to white, text to gray-800, added border-t */}
+                  `}>
                     {item.answer}
                   </div>
                 )}
@@ -137,6 +171,18 @@ const FAQ: React.FC = () => {
         }
         .pulse-effect {
           animation: pulse-effect 2s infinite ease-in-out;
+        }
+
+        @keyframes arrow-bounce {
+          0%, 100% {
+            transform: translateX(0);
+          }
+          50% {
+            transform: translateX(-10px); /* Adjust bounce distance */
+          }
+        }
+        .arrow-bounce {
+          animation: arrow-bounce 1s infinite ease-in-out;
         }
       `}</style>
     </div>

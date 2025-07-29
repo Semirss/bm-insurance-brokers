@@ -1,6 +1,8 @@
 
 import './App.css'
+import ContactMe from './components/ContactMe'
 import FAQ from './components/FAQ'
+import Footer from './components/Footer'
 import HeroSection from './components/HeroSection'
 import Insurance from './components/Insurance'
 import Sponsors from './components/Sponsors'
@@ -16,6 +18,8 @@ function App() {
    <Sponsors />
    <Insurance />
    <FAQ />
+   <ContactMe />
+   <Footer />
     </>
   )
 }
