@@ -165,7 +165,7 @@ const Sponsors: React.FC = () => {
     <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50 overflow-hidden relative font-inter">
       <div className="container mx-auto px-6 text-center">
         {/* Main title with gradient text and animation */}
-        <h2 className="text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 leading-tight mb-4 animate-text-reveal">
+        <h2 className="text-5xl md:text-6xl font-extrabold  text-gray-800 leading-tight mb-4 animate-text-reveal">
           Our Valued <span className="block md:inline">Partnerships</span>
         </h2>
         {/* Description paragraph with fade-in animation */}

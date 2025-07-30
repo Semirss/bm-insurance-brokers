@@ -115,7 +115,7 @@ const Insurance: React.FC = () => {
     <section className="py-12 bg-white text-gray-800 overflow-hidden"> {/* Reduced py */}
       <div className="container mx-auto px-3 text-center"> {/* Reduced px */}
         <h2 className="text-3xl md:text-4xl font-extrabold leading-tight mb-2 animate-fade-in-down text-gray-900"> {/* Reduced text size and mb */}
-          8-in-1 <span className="text-blue-600">Insurance Solutions</span>
+          8-in-1 <span className="">Insurance Solutions</span>
         </h2>
         <p className="text-sm text-gray-700 mt-1 max-w-2xl mx-auto mb-8 animate-fade-in-up"> {/* Reduced text size, mt, mb, max-w */}
           Discover our 8-in-1 Insurance Solutions, a comprehensive suite of services meticulously designed to cater to every aspect of your insurance needs. From personalized risk assessments to seamless claims assistance, our expert team ensures that you receive tailored solutions that provide maximum coverage and peace of mind. With our holistic approach, managing your insurance has never been easier or more efficient.
