@@ -107,12 +107,12 @@ const FAQ: React.FC = () => {
                 key={item.id}
                 ref={isEmphasized ? emphasizedItemRef : null} // Assign ref only to emphasized item
                 className={`rounded-lg shadow-md overflow-hidden transition-all duration-300
-                  ${isEmphasized ? 'bg-blue-600 shadow-xl pulse-effect' : 'bg-blue-900'}
+                  ${isEmphasized ? 'bg-gray-600 shadow-xl pulse-effect' : 'bg-gray-900'}
                 `}
               >
                 <button
                   className={`w-full flex justify-between items-center py-3 px-4 text-base font-semibold focus:outline-none transition-colors duration-300
-                    ${isEmphasized ? 'text-white hover:bg-blue-700' : 'text-white hover:bg-blue-800'}
+                    ${isEmphasized ? 'text-white hover:bg-gray-700' : 'text-white hover:bg-gray-800'}
                   `}
                   onClick={() => toggleItem(item.id)}
                   aria-expanded={isOpen}

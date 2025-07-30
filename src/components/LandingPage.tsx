@@ -114,14 +114,13 @@ At BM Insurance Brokers, we protect what matters most. Our expert team provides 
 
         {/* Right Image/Content */}
         <div className="lg:w-1/2  bg-yellow-400  p-4 shadow-lg relative overflow-hidden flex flex-col items-start justify-start min-h-[300px] lg:min-h-[330px]">
-          <h2 className="text-xl font-bold text-gray-900 mb-1.5">Property Insurance</h2>
-          <p className="text-3xl font-extrabold text-gray-900 mb-0.5">650°</p>
-          <p className="text-base font-medium text-gray-900 mb-5">Offices Around <br /> The World</p>
+          <h2 className="text-xl font-bold text-gray-900 mb-1.5">BM INSURANCE BROKERS</h2>
+          <p className="text-sm font-medium text-gray-900 mb-5">At BM Insurance Brokers, we build confidence in insurance by being trusted partners to both clients and insurers. Guided by our motto, "Serving you with utmost good faith," we deliver reliable, personalized coverage for every insurable need.</p>
           <button className="shadow-lg rounded-3xl bg-black text-white  px-6 py-3 md:mt-25 z-10 hover:text-blue-700 transition duration-300 ease-in-out text-sm font-semibold mb-3">
-            FIND YOUR CITY
+            Start your coverage now 
           </button>
           {/* Placeholder for the house image - positioned absolutely */}
-          <div className="absolute bottom-0 right-0 w-52 md:w-64 lg:w-92 h-auto">
+          <div className="absolute bottom-0 right-0 w-52 md:w-64 lg:w-72 h-auto">
             <img
               src="/house5.png"
               alt="Modern house illustration"

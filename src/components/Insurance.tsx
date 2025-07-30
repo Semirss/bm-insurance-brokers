@@ -23,17 +23,17 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ solution, index }) => {
   return (
     <div
       className={`relative rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1
-        ${solution.isPrimary ? 'bg-blue-700 text-white primary-card-glow' : 'bg-white border border-gray-100'}
+        ${solution.isPrimary ? 'bg-gray-700 text-white primary-card-glow' : 'bg-white border border-gray-100'}
         animate-fade-in-up flex flex-col col-span-2 md:col-span-2`} 
       style={{ animationDelay: `${0.1 + index * 0.05}s` }} // Reduced staggered animation delay
     >
       <div className={`relative z-10 flex flex-col h-full`}> {/* Inner content wrapper, relative z-index */}
-        <div className={`flex items-center p-3 md:p-4 ${solution.isPrimary ? 'bg-blue-700' : 'bg-white'} rounded-t-lg`}> {/* Reduced padding, rounded-t-lg */}
+        <div className={`flex items-center p-3 md:p-4 ${solution.isPrimary ? 'bg-gray-700' : 'bg-white'} rounded-t-lg`}> {/* Reduced padding, rounded-t-lg */}
           {/* Dropdowner Circle */}
           <button
             onClick={toggleOpen}
             className={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center mr-3 transition-colors duration-300
-              ${solution.isPrimary ? 'bg-blue-900 hover:bg-blue-800 text-white' : 'bg-blue-100 hover:bg-blue-200 text-blue-600'}`} // Reduced size, mr
+              ${solution.isPrimary ? 'bg-gray-900 hover:bg-gray-800 text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-600'}`} // Reduced size, mr
             aria-expanded={isOpen}
             aria-label={isOpen ? "Collapse details" : "Expand details"}
           >
@@ -42,7 +42,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ solution, index }) => {
 
           {/* Icon and Title */}
           <div className="flex items-center flex-grow">
-            <div className={`mr-3 ${solution.isPrimary ? 'text-blue-200' : 'text-blue-600'} w-8 h-8`}> {/* Reduced mr, fixed icon container size */}
+            <div className={`mr-3 ${solution.isPrimary ? 'text-gray-200' : 'text-gray-600'} w-8 h-8`}> {/* Reduced mr, fixed icon container size */}
               {solution.icon}
             </div>
             <h3 className={`font-bold text-lg md:text-xl ${solution.isPrimary ? 'text-white' : 'text-gray-900'}`}> {/* Reduced text size */}
@@ -56,7 +56,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ solution, index }) => {
           className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-40 opacity-100 py-3' : 'max-h-0 opacity-0 py-0'}`} // Reduced max-height, py
           style={{ transitionProperty: 'max-height, opacity, padding-top, padding-bottom' }}
         >
-          <p className={`px-5 md:px-6 text-sm ${solution.isPrimary ? 'text-blue-100' : 'text-gray-700'}`}> {/* Reduced px, text size */}
+          <p className={`px-5 md:px-6 text-sm ${solution.isPrimary ? 'text-gray-100' : 'text-gray-700'}`}> {/* Reduced px, text size */}
             {solution.description}
           </p>
         </div>

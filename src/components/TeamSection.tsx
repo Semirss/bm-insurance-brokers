@@ -7,39 +7,37 @@ interface TeamMember {
   specializations: string[];
   bio: string;
   yearsInPractice: number;
-  rating: number;
   image: string;
 }
 
 // Dummy data for team members
 const teamMembers: TeamMember[] = [
+   {
+    name: 'Ayalew Abebe',
+    title: 'CEO',
+    specializations: ['CEO'],
+    bio: 'Ayalew, with 44 years in insurance, has led EIC and major projects like Gibe II. Now CEO of our brokerage, he brings deep industry and global reinsurance expertise.',
+    yearsInPractice: 44,
+   
+    image: '/pp1.jpg', 
+  },
   {
-    name: 'Vannessa Davis',
-    title: 'MD',
-    specializations: ['PRIMARY CARE', 'PREVENTIVE CARE'],
-    bio: 'Dr. Davis is a compassionate and experienced primary care physician dedicated to providing comprehensive healthcare. She focuses on preventive medicine and building strong patient relationships.',
+    name: 'Mebratu Gowomsa',
+    title: 'Deputy General Manager(Operations)',
+    specializations: ['Deputy General Manager(Operations)'],
+    bio: 'With a decade of experience, Mebratu ensures exceptional client support in claims and operational services.',
     yearsInPractice: 10,
-    rating: 4.7,
-    image: '/pp2.jpg', // Placeholder for Vannessa Davis
+    
+    image: '/pp2.jpg', 
   },
   {
-    name: 'Carolyn Solverson',
-    title: 'MD',
-    specializations: ['OB/ GYN', 'PREVENTIVE CARE'],
-    bio: 'Dr. Solverson is a member of the American College of Obstetrics and Gynecology and the Florida Obstetrics and Gynecology Society. She was born in California and speaks fluent English, Vietnamese and Spanish.',
-    yearsInPractice: 12,
-    rating: 4.8,
-    image: '/pp1.jpg', // Placeholder for Carolyn Solverson
-  },
-
-  {
-    name: 'Jane Smith',
-    title: 'MD',
-    specializations: ['DERMATOLOGY'],
-    bio: 'Dr. Smith specializes in skin conditions and cosmetic dermatology. She is committed to helping patients achieve healthy and radiant skin.',
-    yearsInPractice: 15,
-    rating: 4.9,
-    image: '/pp3.jpg', // Placeholder for Jane Smith
+    name: 'Bizuhan Abebe',
+    title: 'Deputy General Manager (Marketing)',
+    specializations: ['Deputy General Manager (Marketing)'],
+    bio: 'With over 19 years in insurance and an MBA, Bizuhan drives growth and client satisfaction through a customer-centric approach.',
+    yearsInPractice: 19,
+   
+    image: '/pp3.jpg', // Placeholder for Bizuhan Abebe
   },
 ];
 
@@ -77,7 +75,7 @@ const TeamSection: React.FC = () => {
   ];
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 font-sans text-gray-800 flex items-center justify-center p-2" style={{ fontFamily: 'Roboto, sans-serif' }}>
+    <div ref={containerRef} className="min-h-screen  bg-gray-100 font-sans text-gray-800 flex items-center justify-center p-2" style={{ fontFamily: 'Roboto, sans-serif' }}>
       {/* Container for the entire section */}
       <div className="  p-4 md:p-8 w-full max-w-5xl overflow-hidden relative">
         {/* Detailed Team Member View */}
@@ -118,8 +116,6 @@ const TeamSection: React.FC = () => {
                   <p className="text-xs text-gray-600">Years in practice</p>
                 </div>
                 <div>
-                  <p className="text-xl font-bold text-gray-900">{currentMember.rating}</p>
-                  <p className="text-xs text-gray-600">Average rating on <a href="#" className="underline text-blue-600">healthgrades</a></p>
                 </div>
               </div>
               <div className="relative self-end -mr-4 -mb-4">
@@ -143,7 +139,7 @@ const TeamSection: React.FC = () => {
 
         {/* Team Overview Section */}
         <div
-          className={`flex flex-col lg:flex-row items-center justify-between h-full transition-transform duration-700 ease-in-out ${
+          className={`flex flex-col  lg:flex-row items-center justify-between h-full transition-transform duration-700 ease-in-out ${
             showDetail ? '-translate-x-full' : 'translate-x-0'
           }`}
         >
@@ -161,7 +157,6 @@ const TeamSection: React.FC = () => {
 
           {/* Right Content - Image Carousel */}
           <div className="lg:w-2/3 flex flex-col items-center relative">
-            {/* Main Image - Clickable to show detail for any member */}
             <div className="w-full max-w-[250px] cursor-pointer" onClick={toggleDetail}>
               <img
                 src={currentMember.image}
@@ -170,7 +165,7 @@ const TeamSection: React.FC = () => {
                 onError={(e) => { e.currentTarget.src = 'https://placehold.co/300x400/e0e0e0/333333?text=Image+Error'; }}
               />
             </div>
-            <h3 className="text-lg font-bold text-gray-900 mt-3 mb-1.5">{currentMember.name}, {currentMember.title}</h3>
+            <h3 className="text-lg font-bold text-gray-900 mt-3 mb-1.5">{currentMember.name} </h3>
             <div className="flex space-x-0.5 mb-3">
               {currentMember.specializations.map((spec, index) => (
                 <span key={index} className="bg-gray-200 text-gray-700 px-1.5 py-0.5 rounded-full text-xs font-semibold">
@@ -199,7 +194,7 @@ const TeamSection: React.FC = () => {
             </div>
 
             {/* Smaller images in the background (mock carousel effect) */}
-            <div className="absolute top-1/2 right-0 transform -translate-y-1/2 flex space-x-1.5 -mr-10 opacity-50 pointer-events-none">
+            <div className="absolute -z-10 top-1/2 right-0 transform -translate-y-1/2 flex space-x-1.5 -mr-10 opacity-50 pointer-events-none">
               {nextMembers.map((member, index) => (
                 <img
                   key={index}
