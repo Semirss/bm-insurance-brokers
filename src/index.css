@@ -1,3 +1,7 @@
 @import "tailwindcss";
 
 
+h1{
+    font-family: var(--font-serif) 
+    
+}

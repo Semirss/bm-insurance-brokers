@@ -26,10 +26,10 @@ const ContactMe: React.FC = () => {
     const messageBox = document.createElement('div');
     messageBox.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
     messageBox.innerHTML = `
-      <div class="bg-white p-8 rounded-lg shadow-xl text-center max-w-sm mx-auto">
-        <h3 class="text-2xl font-bold text-gray-900 mb-4">Message Sent!</h3>
-        <p class="text-gray-700 mb-6">Thank you for your message! We will get back to you shortly.</p>
-        <button id="closeMessageBox" class="bg-gray-600 text-white font-semibold py-2 px-6 rounded-lg hover:bg-gray-700 transition-colors duration-300">
+      <div class="bg-white p-4 rounded-lg shadow-xl text-center max-w-xs mx-auto">
+        <h3 class="text-lg font-bold text-gray-900 mb-2">Message Sent!</h3>
+        <p class="text-sm text-gray-700 mb-4">Thank you for your message! We will get back to you shortly.</p>
+        <button id="closeMessageBox" class="bg-gray-600 text-white font-semibold py-1.5 px-4 rounded-md hover:bg-gray-700 transition-colors duration-300 text-sm">
           Close
         </button>
       </div>
@@ -44,57 +44,45 @@ const ContactMe: React.FC = () => {
   };
 
   return (
-    <section className="bg-gradient-to-br from-gray-50 to-gray-50 py-16 md:py-24 overflow-hidden">
-      <div className="container mx-auto px-6">
+    <section className="bg-gradient-to-br from-gray-50 to-gray-50 py-8 md:py-12 overflow-hidden">
+      <div className="container mx-auto px-4">
         {/* Main Heading for the section */}
-        <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-12 text-center animate-fade-in-down">
+        <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-6 text-center animate-fade-in-down">
           Connect With Our <span className="text-gray-600">Experts</span>
         </h2>
 
-       
-
         {/* Contact Information & Form Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch"> {/* items-stretch for equal height columns */}
-          {/* Left Column: Contact Information */}
-          <div className="bg-white p-8 md:p-10 rounded-xl shadow-2xl border border-gray-100 flex flex-col justify-between animate-fade-in-left">
-            <div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-6">Get in Touch</h3>
-              <p className="text-gray-700 leading-relaxed mb-8">
-                We'd love to hear from you! Whether you have questions, need a quote, or require assistance, our team is here to help. Reach out to us through any of the channels below.
-              </p>
-
-              <div className="space-y-6">
-                <div className="flex items-center text-gray-800">
-                  <svg className="w-6 h-6 text-gray-600 mr-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0L6.343 16.657m11.314 0A8.001 8.001 0 0012 8c-2.83 0-5.485 1.117-7.464 3.136M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0L6.343 16.657m11.314 0A8.001 8.001 0 0012 8c-2.83 0-5.485 1.117-7.464 3.136m0-4.243a4 4 0 110 8 4 4 0 010-8z"></path></svg>
-                  <div>
-                    <p className="font-semibold">Our Office</p>
-                    <p>Addis Ababa, Ethiopia</p>
-                  </div>
-                </div>
-                <div className="flex items-center text-gray-800">
-                  <svg className="w-6 h-6 text-gray-600 mr-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-2 4v7a2 2 0 01-2 2H5a2 2 0 01-2-2v-7"></path></svg>
-                  <div>
-                    <p className="font-semibold ">Email Us</p>
-                    <p>@bminsurancebrokers.com</p>
-                  </div>
-                </div>
-                <div className="flex items-center text-gray-800">
-                  <svg className="w-6 h-6 text-gray-600 mr-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path></svg>
-                  <div>
-                    <p className="font-semibold">Call Us</p>
-                    <p>+251 912 34 567</p>
-                  </div>
-                </div>
-              </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch"> {/* items-stretch for equal height columns */}
+          {/* Left Column: Map */}
+          <div className="bg-white p-4 rounded-lg shadow-lg border border-gray-100 flex flex-col animate-fade-in-left">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Our Location</h3>
+            <div className="relative w-full h-48 md:h-64 rounded-md overflow-hidden">
+              {/* Embedded Google Map */}
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.697529402127!2d38.78440611478635!3d9.01188389352932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b8514131b79e9%3A0x86c1c9b3c7d6c6a!2sMeskel%20Square!5e0!3m2!1sen!2set!4v1678912345678!5m2!1sen!2set"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Our Office Location"
+              ></iframe>
             </div>
-          </div> {/* End of Left Column: Contact Information */}
+            <div className="mt-4 text-sm text-gray-700 space-y-2">
+              <p><span className="font-semibold">Address:</span> From Meskel flower to Gorgorios round about Martereza building 1st floor</p>
+              <p><span className="font-semibold">Hours:</span> Always Open</p>
+              <p><span className="font-semibold">Phone:</span> +251 91 198 2264 | +251 91 175 2727</p>
+              <p><span className="font-semibold">Email:</span> contact@bminsurancebrokers.com</p>
+            </div>
+          </div> {/* End of Left Column: Map */}
 
           {/* Right Column: Contact Form */}
-          <div className="bg-white p-8 md:p-10 rounded-xl shadow-2xl border border-gray-100 animate-fade-in-right">
-            <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Send Us a Message</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="bg-white p-4 rounded-lg shadow-lg border border-gray-100 animate-fade-in-right">
+            <h3 className="text-xl font-bold text-gray-900 mb-6 text-center">Send Us a Message</h3>
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label htmlFor="name" className="block text-gray-700 text-sm font-semibold mb-2">
+                <label htmlFor="name" className="block text-gray-700 text-xs font-semibold mb-1">
                   Name <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -104,12 +92,12 @@ const ContactMe: React.FC = () => {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Your Full Name"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 bg-gray-50 text-gray-900 transition-all duration-200"
+                  className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-gray-500 bg-gray-50 text-gray-900 text-sm"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-gray-700 text-sm font-semibold mb-2">
+                <label htmlFor="email" className="block text-gray-700 text-xs font-semibold mb-1">
                   Email Address <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -119,12 +107,12 @@ const ContactMe: React.FC = () => {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="your.email@example.com"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 bg-gray-50 text-gray-900 transition-all duration-200"
+                  className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-gray-500 bg-gray-50 text-gray-900 text-sm"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="phone" className="block text-gray-700 text-sm font-semibold mb-2">
+                <label htmlFor="phone" className="block text-gray-700 text-xs font-semibold mb-1">
                   Telephone
                 </label>
                 <input
@@ -134,11 +122,11 @@ const ContactMe: React.FC = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="+251 (Optional)"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 bg-gray-50 text-gray-900 transition-all duration-200"
+                  className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-gray-500 bg-gray-50 text-gray-900 text-sm"
                 />
               </div>
               <div>
-                <label htmlFor="comments" className="block text-gray-700 text-sm font-semibold mb-2">
+                <label htmlFor="comments" className="block text-gray-700 text-xs font-semibold mb-1">
                   How can we help? <span className="text-gray-500 font-normal">(Optional)</span>
                 </label>
                 <textarea
@@ -147,23 +135,22 @@ const ContactMe: React.FC = () => {
                   value={formData.comments}
                   onChange={handleChange}
                   placeholder="Tell us about your inquiry or comments..."
-                  rows={6}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 bg-gray-50 text-gray-900 resize-y transition-all duration-200"
+                  rows={4} // Reduced rows
+                  className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-gray-500 bg-gray-50 text-gray-900 resize-y text-sm"
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="w-full bg-gray-600 text-white font-semibold py-3 rounded-lg hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="w-full bg-gray-600 text-white font-semibold py-2 rounded-md hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 shadow-md text-sm"
               >
                 Send Message
               </button>
             </form>
           </div>
         </div>
-      </div> {/* This closes the container div (line 48) */}
+      </div>
 
       <style>{`
-        
         .bg-pattern {
           background-image: radial-gradient(#ffffff33 1px, transparent 1px), radial-gradient(#ffffff33 1px, transparent 1px);
           background-size: 20px 20px;
@@ -172,38 +159,38 @@ const ContactMe: React.FC = () => {
 
         /* Animations */
         @keyframes fade-in-down {
-          0% { opacity: 0; transform: translateY(-30px); }
+          0% { opacity: 0; transform: translateY(-20px); }
           100% { opacity: 1; transform: translateY(0); }
         }
         .animate-fade-in-down {
-          animation: fade-in-down 1s ease-out forwards;
+          animation: fade-in-down 0.8s ease-out forwards;
         }
 
         @keyframes scale-in {
-          0% { opacity: 0; transform: scale(0.9); }
+          0% { opacity: 0; transform: scale(0.95); }
           100% { opacity: 1; transform: scale(1); }
         }
         .animate-scale-in {
-          animation: scale-in 0.8s ease-out forwards;
-          animation-delay: 0.2s;
+          animation: scale-in 0.6s ease-out forwards;
+          animation-delay: 0.1s;
         }
 
         @keyframes fade-in-left {
-          0% { opacity: 0; transform: translateX(-20px); }
+          0% { opacity: 0; transform: translateX(-15px); }
           100% { opacity: 1; transform: translateX(0); }
         }
         .animate-fade-in-left {
-          animation: fade-in-left 0.8s ease-out forwards;
-          animation-delay: 0.4s;
+          animation: fade-in-left 0.6s ease-out forwards;
+          animation-delay: 0.2s;
         }
 
         @keyframes fade-in-right {
-          0% { opacity: 0; transform: translateX(20px); }
+          0% { opacity: 0; transform: translateX(15px); }
           100% { opacity: 1; transform: translateX(0); }
         }
         .animate-fade-in-right {
-          animation: fade-in-right 0.8s ease-out forwards;
-          animation-delay: 0.6s;
+          animation: fade-in-right 0.6s ease-out forwards;
+          animation-delay: 0.3s;
         }
       `}</style>
     </section>

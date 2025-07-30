@@ -1,28 +1,29 @@
 
 import './App.css'
 import ContactMe from './components/ContactMe'
-import FAQ from './components/FAQ'
+// import FAQ from './components/FAQ'
 import Footer from './components/Footer'
 // import HeroSection from './components/HeroSection'
-import Insurance from './components/Insurance'
-import LandingPage from './components/LandingPage'
-import Sponsors from './components/Sponsors'
+// import Insurance from './components/InsuranceSolutions'
+import HomePage from './components/HomePage'
+// import Sponsors from './components/Sponsors'
 import StickyContact from './components/StickyContact'
 // import Team from './components/Team'
 import TeamSection from './components/TeamSection'
+import InsuranceSection from './components/InsuranceSection'
+import Claims from './components/Claims'
+import InsurancePolicies from './components/InsurancePolicies'
 function App() {
   
 
   return (
     <>
     <StickyContact/>
-    <LandingPage />
+    <HomePage />
     <TeamSection />
-   {/* <HeroSection /> */}
-   {/* <Team/> */}
-   <Sponsors />
-   <Insurance />
-   <FAQ />
+   <InsuranceSection />
+   <InsurancePolicies />
+   <Claims />
    <ContactMe />
    <Footer />
     </>

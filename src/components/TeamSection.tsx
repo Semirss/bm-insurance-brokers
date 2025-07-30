@@ -75,7 +75,7 @@ const TeamSection: React.FC = () => {
   ];
 
   return (
-    <div ref={containerRef} className="min-h-screen  bg-gray-100 font-sans text-gray-800 flex items-center justify-center p-2" style={{ fontFamily: 'Roboto, sans-serif' }}>
+    <div ref={containerRef} className="min-h-screen  bg-gray-100  text-gray-800 flex items-center justify-center p-2" style={{ fontFamily: 'Roboto, sans-serif' }}>
       {/* Container for the entire section */}
       <div className="  p-4 md:p-8 w-full max-w-5xl overflow-hidden relative">
         {/* Detailed Team Member View */}
