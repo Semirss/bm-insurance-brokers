@@ -41,13 +41,13 @@ const Header: React.FC = () => {
             <a href="#" className="hover:text-gray-600 transition-colors duration-200">Home</a>
           </li>
           <li>
-            <a href="#" className="hover:text-gray-600 transition-colors duration-200">Insurance Policies</a>
+            <a href="#insurancePolicies" className="hover:text-gray-600 transition-colors duration-200">Insurance Policies</a>
           </li>
           <li>
-            <a href="#" className="hover:text-gray-600 transition-colors duration-200">Claims</a>
+            <a href="#claims" className="hover:text-gray-600 transition-colors duration-200">Claims</a>
           </li>
           <li>
-            <a href="#" className="hover:text-gray-600 transition-colors duration-200">Contact Us</a>
+            <a href="#contact" className="hover:text-gray-600 transition-colors duration-200">Contact Us</a>
           </li>
         </ul>
 
@@ -89,13 +89,13 @@ const Header: React.FC = () => {
                 <a href="#" className="block px-4 py-2  hover:text-gray-600 rounded-md transition-colors duration-200" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
               </li>
               <li>
-                <a href="#" className="block px-4 py-2 hover:bg-gray-50 hover:text-gray-600 rounded-md transition-colors duration-200" onClick={() => setIsMobileMenuOpen(false)}>Insurance Policies</a>
+                <a href="#insurancePolicies" className="block px-4 py-2 hover:bg-gray-50 hover:text-gray-600 rounded-md transition-colors duration-200" onClick={() => setIsMobileMenuOpen(false)}>Insurance Policies</a>
               </li>
               <li>
-                <a href="#" className="block px-4 py-2 hover:bg-gray-50 hover:text-gray-600 rounded-md transition-colors duration-200" onClick={() => setIsMobileMenuOpen(false)}>Claims</a>
+                <a href="#claims" className="block px-4 py-2 hover:bg-gray-50 hover:text-gray-600 rounded-md transition-colors duration-200" onClick={() => setIsMobileMenuOpen(false)}>Claims</a>
               </li>
               <li>
-                <a href="#" className="block px-4 py-2 hover:bg-gray-50 hover:text-gray-600 rounded-md transition-colors duration-200" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</a>
+                <a href="#contact" className="block px-4 py-2 hover:bg-gray-50 hover:text-gray-600 rounded-md transition-colors duration-200" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</a>
               </li>
             </ul>
           </div>
@@ -124,7 +124,7 @@ const HeroSection: React.FC = () => {
         {/* Left Column: Text Content */}
         <div className="flex-1 text-white text-center md:text-left md:pr-8 animate-fade-in-right">
           <h1 className="text-3xl md:text-4xl font-extrabold leading-tight mb-3 drop-shadow-lg">
-            Your Safety, Our Priority Insure Today!
+            Your Trusted Partner in Insurance Solutions
           </h1>
           <p className="text-base md:text-lg font-light leading-relaxed drop-shadow-md">
             Secure your future with affordable health, car, and life insurance. Enjoy lasting savings!
@@ -168,14 +168,14 @@ const AnimatedBanner: React.FC = () => {
   ];
 
   return (
-    <div className="w-full bg-black py-4 overflow-hidden relative">
+    <div className="w-full bg-gray-200 py-4 overflow-hidden relative">
       <div className="flex animate-scroll-left p-3">
         {logos.map((logo, index) => (
           <div key={index} className="flex items-center ">
             <img
               src={logo.imageUrl}
               alt={`${logo.name} Logo`}
-              className="h-10 rounded-xl object-contain ml-40 mr-40"
+              className="h-15 rounded-xl object-contain ml-40 mr-60"
             />
           </div>
         ))}
@@ -204,9 +204,9 @@ const AboutUsSection: React.FC = () => {
           {/* Left Column: Image/Visual */}
           <div className="flex justify-center items-center p-2">
             <img
-              src="/bg1.jpg"
+              src="/bg14.png"
               alt="Our Team"
-              className="w-full h-auto object-cover rounded-md shadow-sm transform transition-transform duration-300 hover:scale-105"
+              className="w-full  h-auto object-cover  transform transition-transform duration-300 hover:scale-105"
             />
           </div>
 

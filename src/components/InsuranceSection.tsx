@@ -85,8 +85,10 @@ const InsuranceSection = () => {
             icon={feature.icon}
           />
         ))}
-      </div>
+      </div> 
+      <div id='insurancePolicies' ></div>
     </section>
+   
   );
 };
 

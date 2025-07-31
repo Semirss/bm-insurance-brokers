@@ -47,9 +47,9 @@ const ContactMe: React.FC = () => {
     <section className="bg-gradient-to-br from-gray-50 to-gray-50 py-8 md:py-12 overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Main Heading for the section */}
-        <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-6 text-center animate-fade-in-down">
+        <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-6 text-center animate-fade-in-down">
           Connect With Our <span className="text-gray-600">Experts</span>
-        </h2>
+        </h1>
 
         {/* Contact Information & Form Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch"> {/* items-stretch for equal height columns */}

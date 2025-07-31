@@ -2,9 +2,9 @@ import React from 'react';
 
 const Claims: React.FC = () => {
   return (
-    <section className="flex flex-col items-center justify-center min-h-screen bg-gray-200 p-4 sm:p-6 md:p-8 font-sans text-center overflow-hidden">
+    <section id='claims' className="flex flex-col items-center justify-center min-h-screen bg-gray-200 p-4 sm:p-6 md:p-8 font-sans text-center overflow-hidden">
       {/* Container for the main content */}
-      <div className="max-w-5xl mx-auto w-full bg-white p-4 sm:p-6 md:p-8 rounded-xl shadow-lg flex flex-col lg:flex-row items-center lg:items-start lg:justify-between">
+      <div className="max-w-5xl mx-auto w-full  p-4 sm:p-6 md:p-8  flex flex-col lg:flex-row items-center lg:items-start lg:justify-between">
         
         {/* Left Side: Act Now, Save Big! content */}
         <div className="flex flex-col items-center text-center lg:w-1/2 lg:pr-6 mb-8 lg:mb-0">
@@ -18,9 +18,9 @@ const Claims: React.FC = () => {
           </div>
 
           {/* Main Heading */}
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-700 mb-3 sm:mb-4 leading-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-700 mb-3 sm:mb-4 leading-tight">
             Act Now, Save Big!
-          </h2>
+          </h1>
 
           {/* Descriptive Text */}
           <p className="text-sm sm:text-base md:text-lg text-gray-700 mb-6 max-w-sm mx-auto">
@@ -30,7 +30,7 @@ const Claims: React.FC = () => {
 
           {/* Get Quote Button */}
           <button className="flex items-center justify-center px-5 py-2 sm:px-6 sm:py-3 bg-gray-600 text-white font-semibold rounded-lg shadow-md hover:bg-gray-700 transition-colors duration-300 transform hover:scale-105">
-            Get Quote
+            Get Started
             <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
             </svg>
@@ -42,9 +42,9 @@ const Claims: React.FC = () => {
 
         {/* Right Side: Claims Assistance Section */}
         <div className="w-full lg:w-1/2 pt-6 lg:pt-0 lg:pl-6 border-t border-gray-300 lg:border-t-0 lg:border-l lg:border-gray-300 text-gray-800">
-          <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-gray-700 mb-3 sm:mb-4 leading-tight">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-gray-700 mb-3 sm:mb-4 leading-tight">
             For Claim Assistance
-          </h3>
+          </h1>
           <p className="text-sm sm:text-base mb-4 sm:mb-6 max-w-xl mx-auto">
             If you need to file a claim, please reach out to our dedicated Claim Officer for support:
           </p>
@@ -82,6 +82,7 @@ const Claims: React.FC = () => {
           </p>
         </div>
       </div>
+      <div  id='contact'></div>
     </section>
   );
 };
