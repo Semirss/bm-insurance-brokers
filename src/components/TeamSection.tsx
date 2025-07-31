@@ -118,14 +118,7 @@ const TeamSection: React.FC = () => {
                 <div>
                 </div>
               </div>
-              <div className="relative self-end -mr-4 -mb-4">
-                <div className="bg-yellow-300 text-gray-900 rounded-full w-24 h-24 flex items-center justify-center text-center p-1.5 text-xs shadow-sm transform rotate-12">
-                  <p className="font-semibold text-xs">SCHEDULE AN <br /> APPOINTMENT</p>
-                  <svg className="w-3 h-3 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                  </svg>
-                </div>
-              </div>
+              
             </div>
           </div>
           {/* Back button for detailed view */}

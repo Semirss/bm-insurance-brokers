@@ -1,10 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isHeaderVisible, setIsHeaderVisible] = useState(false); 
+
+  // Effect to handle scroll and hero section visibility
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroSection = document.getElementById('hero-section');
+      if (heroSection) {
+        const rect = heroSection.getBoundingClientRect();
+        // If the top of the hero section is within the viewport, show the header
+        if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+          setIsHeaderVisible(true);
+        } else {
+          setIsHeaderVisible(false); 
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-20 p-2 md:p-4">
+    <header
+      className={`fixed top-0 left-0 right-0 z-20 p-2 md:p-4 transition-transform duration-500 ease-in-out
+        ${isHeaderVisible ? 'translate-y-0' : '-translate-y-full md:hover:translate-y-0'}
+      `}
+    >
       <nav className="flex items-center justify-between max-w-6xl mx-auto bg-gray-200 bg-opacity-90 backdrop-blur-sm rounded-lg shadow-md px-4 py-3">
         {/* Logo */}
         <div className="flex items-center space-x-1">
@@ -53,7 +81,6 @@ const Header: React.FC = () => {
 
         {/* Mobile Menu */}
         <div className={`fixed inset-0 z-30 transition-opacity duration-300 ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-          {/* Overlay */}
           <div
             className="absolute inset-0 bg-black bg-opacity-50 transition-opacity duration-300"
             onClick={() => setIsMobileMenuOpen(false)}
@@ -61,7 +88,6 @@ const Header: React.FC = () => {
 
           {/* Menu Content */}
           <div className={`absolute top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-            {/* Close Button */}
             <button
               onClick={() => setIsMobileMenuOpen(false)}
               className="absolute top-4 right-4 text-gray-600 hover:text-gray-900 focus:outline-none"
@@ -107,7 +133,7 @@ const Header: React.FC = () => {
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="relative h-[70vh] flex items-center justify-center overflow-hidden pt-16 md:pt-20">
+    <section id="hero-section" className="relative h-[70vh] flex items-center justify-center overflow-hidden pt-16 md:pt-20">
       {/* Background Image with Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -115,11 +141,9 @@ const HeroSection: React.FC = () => {
           backgroundImage: `url('/bg9.webp')`,
         }}
       >
-        {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black opacity-50"></div>
       </div>
 
-      {/* Content Container */}
       <div className="relative z-10 flex flex-col md:flex-row items-center justify-center w-full max-w-6xl mx-auto px-4 py-8 md:py-0">
         {/* Left Column: Text Content */}
         <div className="flex-1 text-white text-center md:text-left md:pr-8 animate-fade-in-right">
@@ -187,14 +211,13 @@ const AnimatedBanner: React.FC = () => {
 const AboutUsSection: React.FC = () => {
   return (
     <section className="relative flex flex-col items-center justify-center py-4 md:py-8 bg-gray-50 font-sans overflow-hidden">
-      {/* Subtle background pattern */}
       <div className="absolute inset-0 bg-pattern opacity-30"></div>
 
       {/* Main Content Container */}
       <div className="relative z-10  p-4 md:p-6 w-full max-w-5xl mx-auto text-center ">
-        <h2 className="text-2xl md:text-3xl font-extrabold text-gray-800 mb-4 leading-tight">
+        <h1 className="text-2xl md:text-3xl font-extrabold text-gray-800 mb-4 leading-tight">
           About <span className="text-gray-700">BM BROKERS</span>
-        </h2>
+        </h1>
         <p className="text-sm text-gray-700 mb-6 max-w-3xl mx-auto">
           At BM BROKERS, we are your trusted partner in securing a stable and prosperous future.
           Our commitment extends beyond policies, focusing on personalized solutions and unwavering support.
@@ -210,9 +233,7 @@ const AboutUsSection: React.FC = () => {
             />
           </div>
 
-          {/* Right Column: Mission, Vision, Values */}
           <div className="flex flex-col space-y-4 p-2">
-            {/* Mission */}
             <div className="flex items-start">
               <div className="flex-shrink-0 bg-gray-100 rounded-full p-1.5 mr-2">
                 <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
@@ -225,7 +246,6 @@ const AboutUsSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Vision */}
             <div className="flex items-start">
               <div className="flex-shrink-0 bg-gray-100 rounded-full p-1.5 mr-2">
                 <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
@@ -238,7 +258,6 @@ const AboutUsSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Values (New Addition) */}
             <div className="flex items-start">
               <div className="flex-shrink-0 bg-gray-100 rounded-full p-1.5 mr-2">
                 <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
@@ -276,7 +295,6 @@ const HomePage: React.FC = () => {
       <HeroSection />
       <AboutUsSection />
       <AnimatedBanner />
-      {/* Global Styles */}
       <style>{`
         /* Font import for Inter */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
